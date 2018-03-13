@@ -38,16 +38,18 @@ Every USB device exposes one or more numbered interfaces. These
 interfaces can be thought of as individual IO streams. In the PSVR,
 there is a USB interface for each different piece of functionality.
 
-| Interface number | Purpose              | Description
-|------------------|----------------------|------------
-| 0                | 3D audio             |
-| 1                | Audio control        |
-| 2                | Mic audio            |
-| 3                | Chat audio           |
-| 4 (HID)          | Sensor               | Sends headset state to the computer
-| 5 (HID)          | Control              |
-| 6                | Video stream H.264   | Probably for social screen
-| 7                | Bulk in              |
-| 8 (HID)          | Control 2            |
+| Interface number | Purpose                                  | Description
+|------------------|------------------------------------------|------------
+| 0                | 3D audio                                 |
+| 1                | Audio control                            |
+| 2                | Mic audio                                |
+| 3                | Chat audio                               |
+| 4 (HID)          | [Sensor readouts][sensor readouts]       | Sends headset state to the computer
+| 5 (HID)          | Control                                  |
+| 6                | Video stream H.264                       | Probably for social screen
+| 7                | Bulk in                                  |
+| 8 (HID)          | Control 2                                |
 
+[sensor readouts]: #sensor-readouts
 
+## Sensor readouts (HID interface 4)
