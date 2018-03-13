@@ -5,3 +5,5 @@ authors = ["Dylan McKay <me@dylanmckay.io>"]
 publish = false
 
 [dependencies]
+# hmdee = { git = "https://github.com/dylanmckay/hmdee.git" }
+hmdee = { path = "../../hmdee/hmdee" }
