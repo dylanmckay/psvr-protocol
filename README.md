@@ -24,7 +24,7 @@ The processing unit has multiple IO connections
     called the social screen as this is what the people around you see - labelled **"HDMI _TV_"**
 * On the front
   * A HDMI video output that goes directly to the headset
-  * A proprietary (AFACT) connector that goes directly to the headset
+  * A proprietary (AFAICT) connector that goes directly to the headset
       * This is used internally by the processing unit for things like
         retrieving inertia sensor readouts
 
@@ -64,6 +64,17 @@ The processing unit itself acts as a [USB HID](https://en.wikipedia.org/wiki/USB
 The PSVR will not display any video unless the correct initialisation
 commands are sent via USB.
 
+Secondly, an HDMI connection must be established with the processing unit.
+Depending on the [display mode][display modes], barrel distortion may need
+to be applied to the image in order to correct for the curvature of the lens.
+
+A full explanation of the connection methods:
+
+* [The custom USB HID protocol][usb protocol]
+* [The expected HDMI signal format][hdmi protocol]
+
+## Note on projects that do not use USB
+
 Some projects (such as the [MacMorpheus video player][MacMorpheus]) avoid all
 USB communication by having an powered-on, idle PS4 connected to the processing
 unit via USB. This sucks because it is a pain having a PlayStation hooked up
@@ -71,7 +82,11 @@ to your system. This setup also can only be used in [cinematic mode][cinematic m
 
 [MacMorpheus]: https://github.com/emoRaivis/MacMorpheus
 
+[display modes]: modes/README.md
 [cinematic mode]: modes/cinematic.md
+[usb protocol]: protocols/usb.md
+[hdmi protocol]: protocols/hdmi.md
+
 
 
 
