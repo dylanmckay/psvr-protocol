@@ -53,7 +53,25 @@ Credit to [Agustín Bernad](https://gitub.com/gusmanb) on GitHub for calculating
 
 ![psvr headset](res/images/psvr-headset.jpg)
 
+
 # The basics
+
+There are two connections that need to be established.
+
+First, a USB connection must be made with the PSVR processing unit.
+The processing unit itself acts as a [USB HID](https://en.wikipedia.org/wiki/USB_human_interface_device_class) device to the host computer.
+
+The PSVR will not display any video unless the correct initialisation
+commands are sent via USB.
+
+Some projects (such as the [MacMorpheus video player][MacMorpheus]) avoid all
+USB communication by having an powered-on, idle PS4 connected to the processing
+unit via USB. This sucks because it is a pain having a PlayStation hooked up
+to your system. This setup also can only be used in [cinematic mode][cinematic mode]
+
+[MacMorpheus]: https://github.com/emoRaivis/MacMorpheus
+
+[cinematic mode]: modes/cinematic.md
 
 
 
