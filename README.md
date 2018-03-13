@@ -2,6 +2,23 @@
 
 Breakdown of the PlayStation VR communication protocols for programmers.
 
+# Foreword
+
+This wiki is an attempt to collect all available and useful information for
+developing programs that interact with the PSVR.
+
+As the protocol itself is not officially documented, all information collected
+is the result of reverse engineering.
+
+This means that much of the terminology used will vary across sources, such as the
+names of commands and fields.
+
+The goal of this project is to be the canonical reference for all things related to
+PSVR hacking.
+
+Contributions and modifications to this repository are strongly encouraged! Information
+for contributors can be found [here](CONTRIBUTING.md).
+
 # The parts
 
 The PSVR comes with two main components - the actual headset, and a small
