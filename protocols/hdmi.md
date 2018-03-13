@@ -39,6 +39,33 @@ Credit to [Agustín Gimenez Bernad](https://github.com/gusmanb) for measuring th
 
 Coefficients of zero have no effect, and thus if you are using a library whose API requires multiple distortion coefficients you can and should set the remaining coefficients to zero.
 
+### Chromatic aberration
+
+The color of the light passing through a spherical lens can be
+distored due to refraction at slightly different angles, causing
+specific colors ("wavelengths of light") to focus at slightly
+different points.
+
+This effect is called _chromatic aberration_, or simply put; color distortion.
+
+Software can choose to correct for this by taking into account
+chromatic aberration factors when performing the barrel distortion.
+
+These are the measured chromatic aberration factors.
+
+**FIXME**: Every formula I've seen for chromatic aberration
+           correction makes no distinction between horizontal
+           and vertical. How are these single values calculated?
+           Find it out and put it here.
+
+| Color    | Vertical factor | Horizontal factor
+|----------|-----------------|-------------------
+| Red      | 1.0             | 1.0
+| Green    | 1.0078          | 1.0091
+| Blue     | 1.0192          | 1.0224
+
+Credit to [Agustín Gimenez Bernad](https://github.com/gusmanb) for measuring these.
+
 ## Cinematic mode
 
 In [Cinematic mode][cinematic mode], things are simpler.
