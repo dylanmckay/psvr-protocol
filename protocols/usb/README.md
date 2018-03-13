@@ -45,10 +45,11 @@ there is a USB interface for each different piece of functionality.
 | 2                | Mic audio                                |
 | 3                | Chat audio                               |
 | 4 (HID)          | [Sensor readouts][sensor readouts]       | Sends headset state to the computer
-| 5 (HID)          | Control                                  |
+| 5 (HID)          | [Control][control]                       |
 | 6                | Video stream H.264                       | Probably for social screen
 | 7                | Bulk in                                  |
 | 8 (HID)          | Control 2                                |
 
 [sensor readouts]: interfaces/sensor_readouts.md
+[control]: interfaces/control.md
 
