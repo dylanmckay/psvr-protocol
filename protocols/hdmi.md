@@ -17,6 +17,28 @@ hard to diagnose withour prior knowledge.
 
 Be sure to check the list of [systems that have issues with RGB 4:4:4](#systems-that-have-rgb-4:4:4-display-issues).
 
+As well as being RGB, the image also needs to be distored to account
+for the curvature of the lens.
+
+### Barrel distortion
+
+The image should use barrel distortion. If this is not done, the visible image in the headset itself will look disstored.
+
+For testing purposes, sending a signal with no distortion correction will work okay, but it will not form a clear image, becoming uncomfortable after a small amount of time.
+
+In the barrel distortion equation, there can be infinitely many coefficients.
+
+The distortion coefficients of the PSVR are known to the second order.
+
+The first and second order coefficients are
+
+* The first order coefficient is `0.22`  (AKA `K1` or `a`)
+* The second order coefficient is `0.24` (AKA `K2` or `b`)
+
+Credit to [Agustín Gimenez Bernad](https://github.com/gusmanb) for measuring these.
+
+Coefficients of zero have no effect, and thus if you are using a library whose API requires multiple distortion coefficients you can and should set the remaining coefficients to zero.
+
 ## Cinematic mode
 
 In [Cinematic mode][cinematic mode], things are simpler.
