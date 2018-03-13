@@ -50,6 +50,5 @@ there is a USB interface for each different piece of functionality.
 | 7                | Bulk in                                  |
 | 8 (HID)          | Control 2                                |
 
-[sensor readouts]: #sensor-readouts
+[sensor readouts]: interfaces/sensor_readouts.md
 
-## Sensor readouts (HID interface 4)

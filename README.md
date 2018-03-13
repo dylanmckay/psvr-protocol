@@ -84,7 +84,7 @@ to your system. This setup also can only be used in [cinematic mode][cinematic m
 
 [display modes]: modes/README.md
 [cinematic mode]: modes/cinematic.md
-[usb protocol]: protocols/usb.md
+[usb protocol]: protocols/usb/README.md
 [hdmi protocol]: protocols/hdmi.md
 
 
