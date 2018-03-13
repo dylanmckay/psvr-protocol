@@ -2,15 +2,32 @@
 
 The PSVR headset's video signal is driven through the HDMI connection labelled "HDMI _PS4_" on the processing unit.
 
+The two display modes expect different image formats
+
+* [Virtual Reality mode](#virtual-reality-mode)
+* [Cinematic mode](#cinematic-mode)
+
 ## Virtual Reality Mode
 
-When the headset is in [Virtual Reality][vr mode] mode, the HDMI signal **must** use [4:4:4 chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling#4:4:4) and the RGB color format.
+When the headset is in [Virtual Reality mode][vr mode], the HDMI signal **must** use [4:4:4 chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling#4:4:4) and the RGB color format.
 
 If the signal is not RGB 4:4:4, then a black screen will be shown
 in the headset instead of the desired signal. This problem can be
 hard to diagnose withour prior knowledge.
 
-This setting is generally set via the operating system display preferences, or the configuration program of the graphcis card.
+Be sure to check the list of [systems that have issues with RGB 4:4:4](#systems-that-have-rgb-4:4:4-display-issues).
+
+## Cinematic mode
+
+In [Cinematic mode][cinematic mode], things are simpler.
+
+The HDMI signal can be in the RGB or YCbCr color spaces, and potentially more.
+
+In a sentence - render a 1920x1080 image to the headset and it'll Just Work™.
+
+## Systems that have RGB 4:4:4 display issues
+
+If this setting needs to be changed, it can generally done via the operating system display preferences, or the configuration program of the graphcis card.
 
 ### AMD cards
 
@@ -59,7 +76,7 @@ This can be made somewhat more bearable by automatically maximizing and focusing
 
 This hack has the downside that you can no longer display a separate image on the system monitor (such as a social screen).
 
-## Cinematic mode
+
 
 [vr mode]: /modes/virtual_reality.md
 [cinematic mode]: /modes/cinematic.md
