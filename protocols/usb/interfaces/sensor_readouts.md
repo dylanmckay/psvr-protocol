@@ -20,7 +20,7 @@ The frame format looks like this
 struct {
   // Information about the headset's buttons.
   struct {
-    uint8_t reserved:1;
+    uint8_t unknown:1;
     // Set if the volume up button is pressed.
     uint8_t plus:1;
     // Set if the volume down button is pressed.
@@ -28,10 +28,10 @@ struct {
     // Set if the mute button is pressed.
     uint8_t mute:1;
   } button;
-  uint8_t reserved0;
-  // The volume, from 0-100.
+  uint8_t unknown1;
+  // The volume, from 0-50.
   uint8_t volume;
-  uint8_t reserved1[5];
+  uint8_t unknown2[5];
   // Information about the current status of the headset itself.
   struct {
     // Set if the headset is currently on a head.
@@ -43,10 +43,13 @@ struct {
     uint8_t microphone_muted:1;
     // Set if headphones are connected to the headset.
     uint8_t headphone_connected:1;
-    uint8_t reserved:2;
+    uint8_t unknown:2;
+    // Appears to alternate every second.
     uint8_t tick:1;
   } status;
-  uint8_t reserved2[11];
+  // FIXME: one of the bits in here specifies the display mode.
+  // https://github.com/gusmanb/PSVRFramework/wiki/Report---Sensor-Data
+  uint8_t unknown3[11];
   // Two readouts from the BMI055 IMU at different time instants.
   //
   // The integer values within are between -32768 and 32767, i.e.
@@ -85,9 +88,9 @@ struct {
       int16_t y;
       int16_t z;
     } accel;
-    uint8_t reserved[4];
+    uint8_t unknown[4];
   } data[2];
-  uint8_t reserved3[12];
+  uint8_t unknown4[12];
 } frame;
 ```
 
