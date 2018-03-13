@@ -32,6 +32,25 @@ The processing unit has multiple IO connections
 
 ## The headset
 
+Properties
+
+| Property                              | Value
+|---------------------------------------|----------
+| Full resolution                       | 1080p (1920x1080)
+| Per-eye resolution                    | 960x1080 (screen divided in half widthwise per eye)
+| Color mode                            | RGB [4:4:4][chroma_subsampling_wiki]
+| [Inertial measurement unit][imu_wiki] | [BMI055][imu datasheet] (6 degrees of freedom)
+| Lens to lens distance                 | 63.1mm
+| Lens center to viewer baseline        | 39.48mm
+| Screen to lens distance               | 35.4mm
+| Distortion factors (K1 & K2)          | 0.22, 0.24
+
+Credit to [Agustín Bernad](https://gitub.com/gusmanb) on GitHub for calculating the lens properties [here](https://github.com/gusmanb/PSVRFramework/issues/27).
+
+[imu_wiki]: https://en.wikipedia.org/wiki/Inertial_measurement_unit
+[imu datasheet]: https://www.bosch-sensortec.com/bst/products/all_products/bmi055
+[chroma_subsampling_wiki]: https://en.wikipedia.org/wiki/Chroma_subsampling
+
 ![psvr headset](res/images/psvr-headset.jpg)
 
 # The basics
