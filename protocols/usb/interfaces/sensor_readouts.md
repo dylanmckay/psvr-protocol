@@ -14,6 +14,8 @@ This includes information such as:
 
 ## Frame format
 
+Frames read from this interface are always 64 bytes in size.
+
 The frame format looks like this
 
 ```c
