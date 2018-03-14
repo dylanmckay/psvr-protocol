@@ -13,5 +13,11 @@ pub fn errors_are_returned_as_ascii_strings(psvr: &mut psvr::Psvr) {
         unknown: false,
         reserved2: 1,
     }).unwrap();
+
+    for i in 0..100 {
+        psvr.send_command_raw(&[0x81, 0x0, 0xaa, 0x8, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]).unwrap();
+
+        let _ = psvr.receive_control(i).unwrap();
+    }
 }
 

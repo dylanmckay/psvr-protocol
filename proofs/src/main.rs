@@ -33,6 +33,5 @@ fn run_proof(proof: Proof, psvr: &mut psvr::Psvr) {
     proof(psvr);
     ::std::thread::sleep(::std::time::Duration::from_millis(100));
 
-    let _ = psvr.receive_control().unwrap();
 }
 
