@@ -2,6 +2,10 @@
 
 Breakdown of the PlayStation VR communication protocols for programmers.
 
+This Wiki is hosted on the web at [dylanmckay.io/psvr-protocol/](https://dylanmckay.io/psvr-protocol/). This site automatically tracks the master branch.
+
+It can be edited at [github.com/dylanmckay/psvr-protocol](https://github.com/dylanmckay/psvr-protocol)
+
 # Foreword
 
 This wiki is an attempt to collect all available and useful information for
