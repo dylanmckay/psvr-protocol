@@ -12,9 +12,21 @@ This includes information such as:
 * The current volume
 * Whether the headset currently being worn
 
-The PSVR samples 2000 readouts from the sensors every second, or 2000Hz. This means there is `1 / 2000 = 0.0005` seconds between samples, or one sample every 500 microseconds.
-
 You can trigger an interrupt read of 64 bytes on the sensor interface at any time to get a sensor readout. No matter how fast you query in a loop, the PSVR will only return up to its maximum of 2000 readouts per second.
+
+## Inertia measurements
+
+In each frame of data received from the sensor interface, there are two IMU readout values from two different
+instants of time taken very close together.
+
+This means that for any sensor data received, we have the option of using the second readout for more
+accurate results.
+
+The PSVR generally samples 2000 readouts from the sensors every second, or 2000Hz. This means there is `1 / 2000 = 0.0005` seconds
+between samples, or one sample every 500 microseconds.
+
+You can find the number of milliseconds between measurements by reading the two timestamps from each frame and getting the difference.
+
 
 ## Frame format
 
@@ -64,8 +76,8 @@ struct {
   // These values can be converted to [-1.0, +1.0] floats by
   // casting to float and simply dividing by 32768.
   //
-  // FIXME: Find out the time delta between these two measurements,
-  //        document it.
+  // FIXME: There are fields for storing timestamps of
+  //        readouts, document them here.
   struct {
     // Gyroscope readings.
     //
