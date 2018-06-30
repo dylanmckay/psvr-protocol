@@ -69,7 +69,7 @@ struct {
   struct {
     // Gyroscope readings.
     //
-    // These values can be preprocessed by
+    // These values must be preprocessed before sensor fusion by
     //
     // (float(value) / 32768.0) * 2000.0 * DEGTORAD
     //
@@ -86,7 +86,8 @@ struct {
     // so the bits that would always be zero have been rightshifted
     // out by the processing unit.
     //
-    // The components of these readings can be preprocessed like so:
+    // The components of these readings must be preprocessed before
+    // sensor fusion, like so:
     //
     // float(-value << 4) / 32768.0
     struct  {
@@ -100,3 +101,26 @@ struct {
 } frame;
 ```
 
+## How to handle gyroscope and accelerometer data
+
+The PSVR has a [BMI055][imu_datasheet] Inertial Measurement Unit ([IMU](https://en.wikipedia.org/wiki/Inertial_measurement_unit)) for detecting acceleration on the headset.
+
+### IMU background
+
+In order to improve accuracy, most IMUs combine two or three separate kinds of movement sensors inside their silicon. The more sensors the better. Each sensor gives three Degrees of Freedom (DoF) - one for each axis. Thus, a two sensor IMU is referred to as 6 DoF, and a three sensor IMU is referred to as 9 DoF.
+
+The PSVR's BMI055 has 6 degrees of freedom due to its gyroscope and accelerometer.
+
+### Sensor Fusion Algorithms
+
+This means that extra processing must be done in software to _fuse_ the data from the sensors into one set of values, usually rotation angles for each axis.
+
+There are a number well-known [sensor fusion](https://en.wikipedia.org/wiki/Sensor_fusion) algorithms for this.
+
+* [Madgwick filter](http://x-io.co.uk/open-source-imu-and-ahrs-algorithms/) (most common algorithm with PSVR hackers)
+* [Mahony filter](http://www.olliw.eu/2013/imu-data-fusing/)
+
+The sensor fusion algorithm will convert the 6 input values into a 3D rotation which can then be directly used in software.
+
+
+[imu_datasheet]: https://www.bosch-sensortec.com/bst/products/all_products/bmi055
