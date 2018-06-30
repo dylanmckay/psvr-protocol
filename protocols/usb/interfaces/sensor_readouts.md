@@ -12,6 +12,10 @@ This includes information such as:
 * The current volume
 * Whether the headset currently being worn
 
+The PSVR samples 2000 readouts from the sensors every second, or 2000Hz. This means there is `1 / 2000 = 0.0005` seconds between samples, or one sample every 500 microseconds.
+
+You can trigger an interrupt read of 64 bytes on the sensor interface at any time to get a sensor readout. No matter how fast you query in a loop, the PSVR will only return up to its maximum of 2000 readouts per second.
+
 ## Frame format
 
 Frames read from this interface are always 64 bytes in size.
