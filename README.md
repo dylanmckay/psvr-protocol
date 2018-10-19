@@ -23,6 +23,24 @@ PSVR hacking.
 Contributions and modifications to this repository are strongly encouraged! Information
 for contributors can be found [here](CONTRIBUTING.md).
 
+# External projects and resources
+
+In no particular order
+
+  * Libraries
+    * [PSVRFramework](https://github.com/gusmanb/PSVRFramework), a C# library for interfacing with the PSVR
+    * [libpsvr](https://github.com/adawarp/libpsvr), A C library for interfacing with the PSVR
+    * [OpenHMD](https://github.com/OpenHMD/OpenHMD), A C library for interfacing with PSVR, Vive, and Oculus headsets, among others. The library extracts away details about the specific headset. Has bindings for many languages. The code for PSVR driver lives [here](https://github.com/OpenHMD/OpenHMD/tree/master/src/drv_psvr).
+    * [OpenPSVR](https://github.com/alatnet/OpenPSVR), an "Open Source Open VR driver for the Playstation VR"
+    * [PSVRMoveService](https://github.com/cboulay/PSMoveService), "A background service that communicates with the psmove and stores pose and button data"
+  * Example applications
+    * [PSVRTracker](https://github.com/HipsterSloth/PSVRTracker), "A sample app demonstrating position and orientation tracking for the PSVR headset"
+    * [MacMorpheus](https://github.com/emoRaivis/MacMorpheus), a 360° PSVR video player for Mac. Does not have software USB support and requires the processing unit be plugged into both your computer and your PlayStation
+    * [thestr4ng3r/psvr](https://github.com/thestr4ng3r/psvr), a "Cross-platform 3D 360/180 video player for Playstation VR"
+    * [PSVRTest](https://github.com/tokkyo/PSVRTest), a small GUI program for viewing information queried from a PSVR headset
+  * Communities
+    * [/r/PSVRHack](https://www.reddit.com/r/PSVRHack)
+
 # The parts
 
 The PSVR comes with two main components - the actual headset, and a small
